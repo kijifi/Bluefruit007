@@ -18,10 +18,13 @@
     </plugin>
 	
 	<plugin name="cordova-plugin-device"  spec="^2.0.2" />  <!-- uuid plugin -->
+	<engine name="android" spec="~6.4.0" />
+    <engine name="ios" spec="^4.5.3" />
+
 	</plugin>
 
 	 <plugin name="cordova-plugin-inappbrowser" spec="~2.0.1" />
-	  <!-- new plugin used for testing UUID -->
+	  
 	<engine name="android" spec="~6.4.0" />
     <engine name="ios" spec="^4.5.3" />
 
