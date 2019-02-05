@@ -4,7 +4,7 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     console.log(device.cordova);
-} // ny uuid funktion
+} 
 
 // ASCII only
 function bytesToString(buffer) {
@@ -33,7 +33,6 @@ var blue ={
     rxCharacteristic: '6e400003-b5a3-f393-e0a9-e50e24dcca9e'  // receive is from the phone's perspective
 }
 
-var string = device.uuid;  // uuid var
 var ConnDeviceId;
 var deviceList =[];
  
