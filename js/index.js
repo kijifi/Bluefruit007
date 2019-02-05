@@ -1,6 +1,10 @@
 // Based on an example:
 //https://github.com/don/cordova-plugin-ble-central
 
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    console.log(device.cordova);
+} // ny uuid funktion
 
 // ASCII only
 function bytesToString(buffer) {
@@ -29,6 +33,7 @@ var blue ={
     rxCharacteristic: '6e400003-b5a3-f393-e0a9-e50e24dcca9e'  // receive is from the phone's perspective
 }
 
+var string = device.uuid;  // uuid var
 var ConnDeviceId;
 var deviceList =[];
  
@@ -73,13 +78,11 @@ function conn(){
 	document.getElementById("debugDiv").innerHTML += "<br>"+deviceTouchArr[0]+"<br>"+deviceTouchArr[1]; //for debug:
 	ble.connect(ConnDeviceId, onConnect, onConnError);
  }
- window.plugins.uniqueDeviceID.get(success, fail);   // uuid funktion
  //succes
-function onConnect(uuid){
+function onConnect(){
 	document.getElementById("statusDiv").innerHTML = " Status: Connected";
 	document.getElementById("bleId").innerHTML = ConnDeviceId;
 	ble.startNotification(ConnDeviceId, blue.serviceUUID, blue.rxCharacteristic, onData, onError);
-	console.log(uuid); //udprint af uuid
 }
 
 //failure
