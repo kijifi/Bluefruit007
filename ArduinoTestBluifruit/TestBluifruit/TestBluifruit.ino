@@ -1,3 +1,12 @@
+#include <Adafruit_ATParser.h>
+#include <Adafruit_BLE.h>
+#include <Adafruit_BLEBattery.h>
+#include <Adafruit_BLEEddystone.h>
+#include <Adafruit_BLEGatt.h>
+#include <Adafruit_BLEMIDI.h>
+#include <Adafruit_BluefruitLE_SPI.h>
+#include <Adafruit_BluefruitLE_UART.h>
+
 /*********************************************************************
   This is an example based on nRF51822 based Bluefruit LE modules
 
@@ -90,10 +99,11 @@ void setup(void)
     // Change Mode LED Activity
     Serial.println(F("Change LED activity to " MODE_LED_BEHAVIOUR));
     ble.sendCommandCheckOK("AT+HWModeLED=" MODE_LED_BEHAVIOUR);
+   
   }
-
   //Give module a new name
-  ble.println("AT+GAPDEVNAME=TLONE"); // named TLONE
+  ble.println(F("AT+GAPDEVNAME=CLAUS")); // named TLONE
+
 
   // Check response status
   ble.waitForOK();
